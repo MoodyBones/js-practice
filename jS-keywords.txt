@@ -1,0 +1,191 @@
+JAVASCRIPT TYPES
+-----------------
+1. Number 
+2. String
+3. Boolean
+4. Undefined
+5. Null
+<!-- 6. Symbol (new in ECMAScript 6) -->
+7. Object
+
+JAVASCRIPT COMPARISONS
+-----------------
+
+!==
+===
+>=
+<=
+>
+<
+
+JAVASCRIPT VARIABLES
+-----------------
+var
+<!-- let (new in ECMAScript 6)-->  
+<!-- const (new in ECMAScript 6)-->
+
+JAVASCRIPT CONDITIONALS
+-----------------
+if
+else
+else if
+<!-- ternary operator -->
+<!-- switch -->
+
+
+JAVASCRIPT LOGICAL OPERATORS
+-----------------
+&&
+||
+!
+
+JAVASCRIPT FUNCTIONS
+-----------------
+var a = function name() {}
+function name() {}
+return
+<!-- () => (new in ECMAScript 6) -->
+
+JAVASCRIPT DATA STRUCTURES
+-----------------
+Array
+Object
+
+JAVASCRIPT LOOPING
+-----------------
+for
+while
+do 
+forEach (new in ECMAScript 5) 
+
+
+JAVASCRIPT KEYWORDS
+-----------------
+break
+case
+catch
+class
+const
+continue
+debugger
+default
+delete
+do
+else
+export
+extends
+finally
+for
+function
+if
+import
+in
+instanceof
+new
+return
+super
+switch
+this
+throw
+try
+typeof
+var
+void
+while
+with
+yield
+
+
+Stuff JS can do
+
+change all HTML elements in the page
+chnage all HTML attributes "
+change all CSS styles "
+remove existing HTML element and attributes
+add new HTML element and attributes
+JS can react to all existing HTML events in the page
+JS can create new HTML events "
+
+//////////////////////////
+Document
+Object
+Model
+
+DOM
+////////////////////////
+
+why we need the DOM
+to be able to modify elements on the page
+
+every browser has a JS engine
+we use JS to talk with the DOM
+
+browsers allow us to access the DOM through the document Object
+window is the document parent
+
+window is the big parent of everything in the browser
+alert();
+is a window Object
+when we don't specify window, it assumes for us
+
+DOM Selectors
+--------------
+getElementsByTagName
+getElementsByClassName
+getElementById
+
+Same as above but better!
+querySelector
+    selects the first time it finds
+querySelectorAll
+    selects all
+works on all browsers!!
+
+//////
+get in the habit of checking 'Can I use'
+///////
+
+getAttribute
+    you need select an element before e.g. queryselector
+setAttribute
+    to change ("current", "new");
+
+##Changing Styles
+style.{property} //ok
+
+className //best
+classList //best
+
+eg.
+document.querySelector("li").classList.add("newTitle")
+    adds class newTitle
+
+classList.add
+classList.remove
+classList.toggle
+    useful for on/off!!
+
+##Bonus
+innerHTML //DANGEROUS
+
+parentElement
+children
+
+##It is important to CACHE selectors in variables
+
+Callback functions
+
+button.addEventListener("click", addListAfterClick);
+input.addEventListener("keypress", addListAfterKeypress);
+
+This is something called a callback function. 
+When that line of javascript runs, we don't want the 
+addLisAfterClick function to run because we are just 
+adding the event listener now to wait for click or keypress. 
+We want to let it know though that we want this action to 
+happen when a click happens. 
+
+So the function now automatically gets run 
+(gets added the ()) every time the click happens. 
+So we are passing a reference to the function without 
+running it.

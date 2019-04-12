@@ -64,7 +64,8 @@
 
 // let example = 7.77;
 // console.log(parseInt(example));
-    //no rounding
+    // integer
+    // no rounding
 
 // let example = '7.77';
 // console.log(parseFloat(example));
@@ -121,7 +122,7 @@
 
 // let example4 = undefined;
 // // false
-//     // either the var wasn't defined
+//     // either the variable wasn't defined
 //     // or a bug in the code
 
 // let example5 = '';
@@ -175,7 +176,8 @@
 // example1.forEach((element) => {
 //     console.log(element)
 // });
-//     // to iterate through each element in our array
+// //     // to iterate through each element in our array
+// //     
 
 // console.log(example1);
 
@@ -188,6 +190,7 @@
 // example2.push(11);
 // console.log(example1);
 // console.log(example2);
+
 // they have the same value
 // with arrays & objects you're passing by reference
 // example2 is setting a reference to example1
@@ -209,7 +212,7 @@
 // });
 //     // map method
 //     // identical to spread operator
-//     // recomment the spread operator coz its less code
+//     // recommend the spread operator coz its less code
 
 // example2.push(11);
 // console.log(example1);
@@ -227,7 +230,7 @@
     // strings
     // numbers
     // arrays
-    // multiple data types
+    // multiple data types!
 
 
 // let example1 = {
@@ -381,7 +384,7 @@
 // // example1--;
 // // // minus 1
 
-// example1 %= 5;
+// example1 += 5;
 // // same as.. example1 = example1 + 5
 // // also use: 
 //     // +=
@@ -568,7 +571,7 @@
 // we want to repeat our code
 // when theres not a finite number of answers
 // we can't use a switch 
-// we don't the length of the array or how many iterations to run
+// we don't know the length of the array or how many iterations to run
 
 // We just want it to run until a value is false
 // also does iterations
@@ -619,7 +622,7 @@
 // While & Do while are not used much
 // except for times when you don't have any way of knowing how many iterations
 // and basically you're checking a value until you get a right value
-// caution you might creat an infinite loops which will crash your program :(
+// caution you might create an infinite loops which will crash your program :(
 
 
 
