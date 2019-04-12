@@ -176,3 +176,152 @@
 // console.log(array2);
 // var getOrange = array2[1][1][0];
 // console.log(getOrange);
+
+
+//// MEL CONTINUE FROM HERE!!!
+
+
+// EXCERCISE 7
+
+// Create an object and an array which we will use in our facebook exercise. 
+
+// 1. Create an object that has properties "username" and "password". Fill those values in with strings.
+
+// THESE INSTRUCTIONS ARE TERRRIBLE!!
+
+// 2. Create an array which contains the object you have made above and name the array "database".
+
+// let database = [
+//     {
+//     username: "Moody",
+//     password: "bones"
+// }];
+
+
+// // 3. Create an array called "newsfeed" which contains 3 objects with properties "username" and "timeline".
+
+// let newsFeed = [
+//     {
+//         usename: "Mousey", 
+//         timeline: "This is too easy"
+//     },
+//     {
+//         usename: "Moxy", 
+//         timeline: "I want to learn more advanced stuff"
+//     },
+//     {
+//         usename: "Moop", 
+//         timeline: "Yes, me too! But any practice is good practice ;P"
+//     }
+// ];
+
+// let userNamePrompt = prompt("What's your username?");
+// let passwordPrompt = prompt("What's your password?");
+
+// function signIn(user, pass) {
+//     if (user === database[0].username && 
+//         pass === database[0].password) {
+//             console.log(newsFeed);
+//         } else {
+//             alert("Sorry, no entry");
+//         }
+// };
+
+// signIn(userNamePrompt, passwordPrompt);
+
+
+//  Terminolgy
+
+// // function declaration
+// function name() {
+
+// }
+
+// // function expressipn
+// var name = fucntion() {
+
+// };
+// // expression end with ;
+
+// // expresion
+// 1 + 3;
+// var a = 2;
+// return true;
+
+
+// // Calling/Invoking Functions
+// alert();
+// name(par1, par2);
+
+// // Assign a variable
+// let a = true;
+
+// // Function vs Method
+// function fucntionName() {
+
+// }
+// fucntionName();
+
+// let obj = {
+//     methodName: function() {
+
+//     }
+// };
+// obj.methodName();
+
+
+// ///////////////////////////////
+// // Facebook Excercise with Loops
+
+// let database = [
+//     {
+//         username: "Moody",
+//         password: "bones"
+//     },
+//     {
+//         username: "Sally",
+//         password: "sally"
+//     },
+//     {
+//         username: "Arne",
+//         password: "arne"
+//     }
+// ];
+
+// let newsFeed = [
+//     {
+//         usename: "Mousey", 
+//         timeline: "This is too easy"
+//     },
+//     {
+//         usename: "Moxy", 
+//         timeline: "I want to learn more advanced stuff"
+//     },
+//     {
+//         usename: "Moop", 
+//         timeline: "Yes, me too! But any practice is good practice ;P"
+//     }
+// ];
+
+// function isUserValid(user, pass) {
+//     for (var i = 0; i < database.length; i++) {
+//         if(database[i].username === user &&
+//             database[i].password === pass) {
+//                 return true;
+//             }
+//     }
+//     return false;
+// }
+
+// function signIn(user, pass) {
+//     if (isUserValid(user, pass)) {
+//         console.log(newsFeed);
+//     } else {
+//         alert("Sorry, wrong username and password");
+//     }
+// };
+
+// let userNamePrompt = prompt("What\'s your username?");
+// let passwordPrompt = prompt("What\'s your password?");
+
+// signIn(userNamePrompt, passwordPrompt);
