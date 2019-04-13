@@ -1,36 +1,124 @@
-html {
-  margin: 2rem;
+/* 
+plan:
+bg image 
+new font
+container
+style buttons
+practise flex/grid
+*/
+
+
+html, body {
+  margin: auto 0;
+  font-size: 20px;
+  font-family: 'BioRhyme', serif;
 }
 
-.coolTitle {
-  text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
-  font-size: 40px;
-  transform: skewY(-10deg);
-  letter-spacing: 4px;
-  word-spacing: -8px;
-  color: tomato;
-  text-shadow: 
-    -1px -1px 0 firebrick,
-    -2px -2px 0 firebrick,
-    -3px -3px 0 firebrick,
-    -4px -4px 0 firebrick,
-    -5px -5px 0 firebrick,
-    -6px -6px 0 firebrick,
-    -7px -7px 0 firebrick,
-    -8px -8px 0 firebrick,
-    -30px 20px 40px dimgrey;
+body {
+  background: 
+    url(lysander-yuen-1361159-unsplash.jpg)
+    no-repeat;                 
+background-size: cover;
+height: 100vh;
+display: grid;
+justify-items: center;
 }
+
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  width: 60vw;
+  display: grid;
+  justify-items: center;
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.header {
+  display: inline-flex;
+}
+
+h1 {
+  padding: 0 1.5rem;
+  font-family: 'Monoton', cursive;
+  letter-spacing: 3px;
+  font-weight: 300;
+  font-size: 2.8em;
+}
+
+#first {
+  display: flex;
+  align-self: baseline;
+}
+
+.list {
+  background: rgba(247, 192, 192, 0.8);
+  border-radius: 20px 100px;
+  padding: 2rem;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.list--header {
+  align-self: center;
+  padding-top: 1rem;
+}
+
+#userinput, #enter {
+  padding: .5rem;
+  font-size: .8em;
+  border-radius: 5%;
+}
+
+#enter {
+  background-color: #E15148;
+  color: rgba(244, 244, 244, 0.9);
+  border: #E15148;
+  cursor: pointer;
+}
+
+#enter:link,
+#enter:visited {
+  background-color: #E15148;
+  color: rgba(244, 244, 244, 0.9);
+  border: #E15148;
+}
+
+#enter:hover,
+#enter:active {
+  background-color: rgba(225, 82, 72, 0.80);
+  color: #f4f4f4;
+  border: rgba(225, 82, 72, 0.80);
+}
+
+ul {
+  text-align: right;
+  list-style-type: none;
+}
+
+li {
+  padding-top: .5rem;
+}
+
+button {
+  margin-left: 1rem;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: .5rem .3rem;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
 
 .done {
   text-decoration: line-through;
 }
 
-body button {
-  padding: 3px 5px;
-  margin-left: 5px;
-}
-
-li {
-  margin: .5em;
+.footer {
+  font-size: .7em;
+  letter-spacing: 1px;
 }

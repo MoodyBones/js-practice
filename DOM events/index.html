@@ -2,21 +2,31 @@
 <html>
 <head>
 	<title>Javascript + DOM</title>
+	<link href="https://fonts.googleapis.com/css?family=BioRhyme:300|Monoton" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1>Shopping List</h1>
-	<p id="first">Get it done today</p>
-	<input id="userinput" type="text" placeholder="enter items">
-	<button id="enter">Enter</button>
-	<ul id="item--List">
-		<li>Notebook<button class="delete--button">Delete</button></li>
-		<li>Jello<button class="delete--button">Delete</button></li>
-		<li>Spinach<button class="delete--button">Delete</button></li>
-		<li>Rice<button class="delete--button">Delete</button></li>
-		<li>Birthday Cake<button class="delete--button">Delete</button></li>
-		<li>Candles<button class="delete--button">Delete</button></li>
-	</ul>
+	<div class="container">
+		<div class="header">
+			<h1>Shopping List</h1>
+			<p id="first">Get shit done today!</p>
+		</div>
+		<div class="list">
+			<div class="list--header">
+				<input id="userinput" type="text" placeholder="...">
+				<button id="enter">Enter!</button>
+			</div>
+			<ul id="item--List">
+				<li>Notebook<button class="delete--button">Delete</button></li>
+				<li>Jello<button class="delete--button">Delete</button></li>
+				<li>Spinach<button class="delete--button">Delete</button></li>
+				<li>Rice<button class="delete--button">Delete</button></li>
+				<li>Birthday Cake<button class="delete--button">Delete</button></li>
+				<li>Candles<button class="delete--button">Delete</button></li>
+			</ul>
+		</div>
+		<div class="footer">Made by Moody</div>
+	</div>
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

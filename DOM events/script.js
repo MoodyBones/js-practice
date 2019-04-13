@@ -21,18 +21,13 @@ function createListElement(el) {
 	
 	input.value = "";
 	btn.onclick = deleteListItem;
-
 }
-
-
-
 
 function addListAfterClick() {
 	if (inputLength() > 0) {
 		createListElement();
 	}
 }
-
 
 function addListAfterKeypress(event) {
 	if (inputLength() > 0 && event.keyCode === 13) {
