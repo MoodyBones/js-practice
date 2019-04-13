@@ -25,3 +25,12 @@ html {
 .done {
   text-decoration: line-through;
 }
+
+body button {
+  padding: 3px 5px;
+  margin-left: 5px;
+}
+
+li {
+  margin: .5em;
+}
