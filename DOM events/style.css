@@ -10,7 +10,7 @@ practise flex/grid
 
 html, body {
   margin: auto 0;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'BioRhyme', serif;
 }
 
@@ -19,7 +19,6 @@ body {
     url(lysander-yuen-1361159-unsplash.jpg)
     no-repeat;                 
 background-size: cover;
-height: 100vh;
 display: grid;
 justify-items: center;
 }
@@ -110,7 +109,6 @@ button {
   letter-spacing: 1px;
   padding: .5rem .3rem;
   cursor: pointer;
-  border-radius: 15px;
 }
 
 
