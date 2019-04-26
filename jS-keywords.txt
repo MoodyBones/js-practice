@@ -192,14 +192,6 @@ running it.
 
 
 
-//////////////////
-TERNARY OPERATOR
-condition ? expr1 : expr2;
-
-// very good option instead of if/else
-// when you check for a condition 
-// and there is only 2 possible expressions that come out of it!!!
-
 
 
 
