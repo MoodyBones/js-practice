@@ -735,22 +735,22 @@ const array = [
   //Create an array using forEach that has all the usernames with a "!" to each of the usernames
 
   // my answer :)
-  // const newNameArray = [];
-  // array.forEach(obj => newNameArray.push(`${obj.username}!`));
+  const newNameArray = [];
+  array.forEach(obj => newNameArray.push(`${obj.username}!`));
 
-  // console.log(newNameArray);
+  console.log(newNameArray);
 
 
   // the teachers shit ass long bullshit answer :(
   // or another way to do it
-  // let newArray = [];
-  // array.forEach(user => {
-  //   let { username } = user;
-  //   username = username + '!';
-  //   newArray.push(username);
-  // })
+  let newArray = [];
+  array.forEach(user => {
+    let { username } = user;
+    username = username + '!';
+    newArray.push(username);
+  })
 
-  // console.log(newArray);
+  console.log(newArray);
     // mine is better
 
   
