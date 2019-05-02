@@ -551,7 +551,7 @@
 //  where the output of one function is the input of the other
 
 // const compose = (f, g) => (a) => f(g(a));
-// const sum = (num) => num + 1;
+// const sum = num => num + 1;
 // compose(sum, sum)(5);
 // // 7
 
@@ -640,8 +640,10 @@
 //   double.push(num * 2);
 // });
 
-// console.log('orginal array', array);
+// console.log('original array', array);
+// // [1, 2, 10, 16]
 // console.log('forEach', double);
+// // [2, 4, 20, 32]
 
 
 ///////////////////////////////////////////////
@@ -681,6 +683,7 @@
 // const filterArray = array3.filter(num => num > 5);
 
 // console.log('filter', filterArray);
+// [10, 16]
 // filters through and returns a new array with stuff it finds true
 
 
@@ -693,6 +696,7 @@
 // }, 0);
 
 // console.log('reduce', reduceArray);
+// 29
 // define the accumulator after the function, 
 // before the closing brackets
 // here you can specify a second parameter/ starting number e.g. 0
@@ -704,54 +708,54 @@
 ///////////////////////////////////////////////
 
 // Complete the below questions using this array:
-const array = [
-    {
-      username: "john",
-      team: "red",
-      score: 5,
-      items: ["ball", "book", "pen"]
-    },
-    {
-      username: "becky",
-      team: "blue",
-      score: 10,
-      items: ["tape", "backpack", "pen"]
-    },
-    {
-      username: "susy",
-      team: "red",
-      score: 55,
-      items: ["ball", "eraser", "pen"]
-    },
-    {
-      username: "tyson",
-      team: "green",
-      score: 1,
-      items: ["book", "pen"]
-    },
+// const array = [
+//     {
+//       username: "john",
+//       team: "red",
+//       score: 5,
+//       items: ["ball", "book", "pen"]
+//     },
+//     {
+//       username: "becky",
+//       team: "blue",
+//       score: 10,
+//       items: ["tape", "backpack", "pen"]
+//     },
+//     {
+//       username: "susy",
+//       team: "red",
+//       score: 55,
+//       items: ["ball", "eraser", "pen"]
+//     },
+//     {
+//       username: "tyson",
+//       team: "green",
+//       score: 1,
+//       items: ["book", "pen"]
+//     },
   
-  ];
+//   ];
   
   //Create an array using forEach that has all the usernames with a "!" to each of the usernames
 
   // my answer :)
-  const newNameArray = [];
-  array.forEach(obj => newNameArray.push(`${obj.username}!`));
+  // const newNameArray = [];
+  // array.forEach(obj => newNameArray.push(`${obj.username}!`));
 
-  console.log(newNameArray);
+  // console.log(newNameArray);
 
 
-  // the teachers shit ass long bullshit answer :(
-  // or another way to do it
-  let newArray = [];
-  array.forEach(user => {
-    let { username } = user;
-    username = username + '!';
-    newArray.push(username);
-  })
+  // // the teachers longer answer...
+  // // or another way to do it
+  // let newArray = [];
+  // array.forEach(user => {
+  //   let { username } = user;
+  //   username = username + '!';
+  //   newArray.push(username);
+  // })
 
-  console.log(newArray);
-    // mine is better
+  // console.log(newArray);
+  //   // mine is shorter
 
   
 
@@ -785,11 +789,11 @@ const array = [
 //   //Find out the total score of all users using reduce
 
 // answer, same as teachers
-//   const reduceArray = array.reduce((acc, num) => {
-//     return acc + num.score;
-//   }, 0)
+  // const reduceArray = array.reduce((acc, num) => {
+  //   return acc + num.score;
+  // }, 0)
 
-//   console.log(reduceArray);
+  // console.log(reduceArray);
 
   
 
@@ -829,9 +833,147 @@ const array = [
 // });
 // console.log(bonusArray);
 
+
 // groovy groovy
 // hey mel go & practice arrays methods!!!
 // then continue with object
+
+
+
+
+///////////////////////////////////////////////
+// Advanced Objects
+
+// ///////
+// Reference type
+
+// [] === []
+// false
+// [1] === [1]
+// false
+
+// let object1 = { value: 10};
+// let object2 = object1;
+// let object3 = { value: 10};
+
+// object1 === object2;
+// true
+// object1 === object3;
+// false
+
+// object1.value = 15;
+// object2.value;
+// // 15
+// object3.value;
+// // 10
+
+// objects are reference types (non primitive type)
+// that means, theyre created by the programer
+// arrays are objects
+
+
+// ////////
+// Context (vs scope)
+
+// scope is created with {}
+// function b() {
+//   let a = 4;
+// }
+
+// Context tells you where we are within the object
+// console.log(this)
+// this referes to what object it's inside of
+// this is v important
+
+// function a() {
+//   console.log(this);
+// }
+
+// const object4 = {
+//   a: function() {
+//     console.log(this);
+//   }
+// }
+
+
+
+// Instantiation
+
+// when you make a copy of an object and reuse the code
+// making instances /or multiple copies
+
+// class Player {
+//   constructor(name, type) {
+//     console.log(this);
+//     this.name = name;
+//     this.type = type;
+//   }
+//   introduce() {
+//     console.log(`Hi I am ${this.name}, I'm a ${this.type}`);
+//   }
+// }
+
+// // in order to access the player and make copies of it
+// // you need a contructor
+//     // which is all the properties and methods that you want the player to have
+// // you can also creat methods that players can have
+// // and any time you want to access a property within the constuctor
+// // use....
+// ///////////
+// // this
+// ///////////
+
+// class Wizard extends Player {
+//  constructor(name, type) {
+//   super(name, type)
+//  }
+//  play() {
+//    console.log(`heyyyyyy I'm a ${this.type}`);
+//  }
+// }
+// // extends.. i wanna add on top of player
+// //  any time we extend, we need to call the constructor function of the parent(player)
+// // e.g. super() with the properties we want to pass to the instructor
+
+// const wizard1 = new Wizard('Shelly', 'Healer');
+// const wizard2 = new Wizard('Greg', 'Dark Magic');
+
+// this is new syntax you'll see in React
+// it's a part of ES6
+// it replaces classical Inferitance
+    // e.g. prototype
+
+
+
+///////////////////////
+// Classical Inheritance
+// old version
+// don't use!!!!!
+
+// var Player = function(name, type) {
+//   this.name = name;
+//   this.type = type;
+// }
+
+// Player.prototype.introduce = function() {
+//   console.log('Hi I am ' + this.name + ', I\'m a ' + this.type + '.');
+// }
+
+// var wizard1 = new Player('Shelly', 'healer');
+// var wizard2 = new Player('Shawn', 'dark magic');
+
+// wizard1.play = function() {
+//     console.log('Woooooo I\'m a ' + this.type + '.');
+// }
+
+// wizard2.play = function() {
+//     console.log('Woooooo I\'m a ' + this.type + '.');
+// }
+
+// don't use the above!!!
+// it's for reference
+//////////////////////////
+
 
 
 
@@ -845,7 +987,9 @@ const array = [
 //Evaluate these:
 //#1
 // [2] === [2] 
+// false
 // {} === {} 
+// false
 
 //#2 what is the value of property a for each object.
 // const object1 = { a: 5 }; 
@@ -854,9 +998,175 @@ const array = [
 // const object4 = { a: 5}; 
 // object1.a = 4;
 
+// solution..
+// object1, object2, object3
+// { a: 4}
+// object4
+// { a: 5}
 
 //#3 create two classes: an Animal class and a Mamal class. 
-// create a cow that accepts a name, type and color and has a sound method that moo's her name, type and color. 
+// create a cow that accepts a name, type and color 
+// and has a sound method that moo's her name, type and color. 
+
+// class Animal {
+//     constructor(name, type, color) {
+//         this.name = name;
+//         this.type = type;
+//         this.color = color;
+//     }
+// }
+
+// class Mammal extends Animal {
+//     constructor(name, type, color) {
+//         super(name, type, color);
+//     }
+//     sound() {
+//         console.log(`Moooooo I'm a ${this.name}, a ${this.color} ${this.type}`);
+//     }
+// } 
+
+// const cow1 = new Mammal('Molly', 'cow', 'brown');
+// const cow2 = new Mammal('Arne', 'cow', 'blonde');
+
+
+
+///////////////////////////////////////////////
+// Pass By Value vs Pass By Reference
+
+// primitive tyoes are imitable
+// we can't change them
+// something new gets created
+// pass by value
+
+// let a = 5;
+// let b = a;
+
+// b++;
+
+
+// objects
+// pass by reference
+
+// let obj1 = {name: 'Yao', password: '123'};
+// let obj2 = obj1;
+
+// obj2.password = 'easypeasy';
+
+// objects in js are stored in memory and passed by reference
+// we don't copy the values like you do with primitive types
+// we simply create a reference to where the object is 
+
+// its good because..
+// its saves space and memory, we're not copying or cloning the object, creating multiple versions
+// and bad because..
+// someone may accidently change a property on the referenced object
+
+// so be careful!
+
+// Arrays are Objects!!
+// they also pass by reference!
+
+// let c = [1,2,3,4,5];
+// let d = c;
+// d.push(4837264);
+// console.log(d);
+// console.log(c);
+
+// what if we want to make a copy!?
+// with an array it's easy...
+// [].concat()
+// which will push it into a new empty array
+// it clones an array
+
+// let c = [1,2,3,4,5];
+// let d = [].concat(c);
+// d.push(4837264);
+// console.log(d);
+// console.log(c);
+
+
+// objects are more difficult to copy
+// Object.assign(to, from);
+
+// let obj = {a: 'a', b: 'b', c: {deep: 'try and copy me'}};
+// let clone = Object.assign({}, obj);
+
+// or use the spread operator
+// new feature
+// let clone2 = {...obj};
+
+// what happens when you have an object inside an object??
+// we made a shallow clone
+// we cloned the first level only
+
+// how do we do deep cloning?
+// let superClone = JSON.parse(JSON.stringify(obj));
+
+// obj.c.deep = 'hahaha';
+// console.log(obj);
+// console.log(clone);
+// console.log(clone2);
+// console.log(superClone);
+
+//  warning, if doing a deep clone
+// be careful
+// if it's big object, it will take a long time to clone everything
+// so it's not commonly used
+// you probably should be doing it a different way
+
+
+
+///////////////////////////////////////////////
+// Type Coercion
+
+// means the language converting one type to another type
+// all languages have type coercion
+// JS has an expecially heavy type coercion nature because it's dynamically typed
+
+// it happens when you used ==
+// === means be explicit
+// you should always use ===
+// using == is not predicitable code
+
+// type coercion also works for if statements
+// see online table
+
+// -0 === +0
+// true
+// Object.is(-0,+0)
+// false
+
+//  NaN === NaN
+//  false
+// Object.is(NaN,NaN)
+// true
+
+// takeaway..
+// type coercion is tricky
+// so best to use strict operators always!!
+
+
+
+
+///////////////////////////////////////////////
+// ES7
+
+// released in 2016
+// only 2 updates from ES6
+
+
+// Includes method for strings and arrays..
+// 'Hellooooo'.includes('o');
+// true
+
+// const pets = ['cat', 'dog', 'bat'];
+// pets.includes('dog');
+// // true
+
+
+// exponential operator **
+// const square = x => x**2
+
 
 
 ///////////////////////////////////////////////
@@ -868,19 +1178,55 @@ const array = [
 
 // #1) Check if this array includes the name "John".
 // const dragons = ['Tim', 'Johnathan', 'Sandy', 'Sarah'];
+// console.log(dragons.includes('John'));
+// false
 
 
 // #2) Check if this array includes any name that has "John" inside of it. If it does, return that
 // name or names in an array.
 // const dragons = ['Tim', 'Johnathan', 'Sandy', 'Sarah'];
+// // console.log(dragons[1].includes('John'));
 
+// // i need a function
+// const doesItInclude = name => {
+//   // loop through array
+//   for (let i = 0; i < dragons.length; i++) {
+//     // check if part name is in array
+//     if (dragons[i].includes(name)) {
+//       // console.log('part name Yes!');
+//       console.log(dragons.splice(i, 1));
+//       break;
+//     } else
+//     // checks if full name is in the array
+//     if (dragons.includes(name)) {
+//       // console.log('full name Yes!');
+//       console.log(dragons.splice(i, 1));
+//       break;
+//     } 
+//   }
+// }
+
+// doesItInclude('San');
+// works, but hacky / not clean
+// and only works with one name!!! :(
+
+// anddd the answer..
+// const dragons = ['Tim', 'Johnathan', 'Sandy', 'Sarah'];
+// console.log(dragons.filter(name => name.includes('John')));
+// damnnnnn so easy!!!
 
 // #3) Create a function that calulates the power of 100 of a number entered as a parameter
 
+// const powerNumber = a => {
+//   a = a**100; 
+//   console.log(a);
+// } 
+
+// powerNumber(1000);
 
 // #4) Useing your function from #3, put in the paramter 10000. What is the result?
 // Research for yourself why you get this result
-
+// infinity
 
 
 
