@@ -1230,6 +1230,103 @@
 
 
 
+
+///////////////////////////////////////////////
+// ES8
+
+// Introduced 2017
+
+// New String methods
+// it's useful for aligning characters of strings
+// .padStart()
+// 'Turtle'.padStart(10);
+// // adds 10 spaces at the beginning
+
+// .padEnd()
+// 'Turtle'.padEnd(10);
+// // adds 10 spaces at the end
+
+
+
+// Trailing comas in functions, parameter lists & calls
+// const fun = (
+//   a,
+//   b,
+//   c,
+//   d,
+//   ) => {
+//   console.log(a);
+// }
+// fun(1,2,3,4,);
+// is useful when you have a big parameter list
+// it's easier to add new parameters
+// also in github when you make changes, it highlights differences, 
+// in green/red much cleaner
+// the ending coma is now valid, and won't give out an error
+
+
+// Object.values
+// Object.entries
+// replaces Object.keys
+      // which allowed us to use array methods, but on objects
+      // e.g.
+      // let obj = {
+      //   username0: 'Santa',
+      //   username1: 'Rudolf',
+      //   username2: 'Mr.Grinch'
+      // };
+      // because it's not an array
+      // we cant use filter/map/reduce because theyre for arrays, so we use
+      // Object.keys(obj).forEach((key, index) => {
+      //   console.log(key, obj[key]);
+      // });
+      // returns..
+      // username0 Santa
+      // username1 Rudolf
+      // username2 Mr.Grinch
+      // one way to iterate/loop through objects
+
+// new syntax
+// Object.values
+// Object.values(obj).forEach(value => {
+//   console.log(value);
+// });
+// returns
+// Santa
+// Rudolf
+// Mr.Grinch
+// 
+
+
+// &
+// Object.entries
+// Object.entries(obj).forEach(value => {
+//   console.log(value);
+// });
+// returns an array...
+// ['username0', 'Santa']
+// ['username1', 'Rudolf']
+// ['username2', 'Mr.Grinch']
+// you get both key & value
+// then you can use array functions (filter, reduce, map, forEach)
+      
+
+// example if we want to change the username
+// Object.entries(obj).map(value=> {
+//   console.log(value[1] + value[0].replace('username', ''));
+// });
+// returns
+//  ["Santa0", "Rudolf1", "Mr.Grinch2"]
+
+
+// AND THE NEW ES8 FEATURE EVERYONE IS MOST EXCITED ABOUT..
+// Async Await
+//  see notes after the exercises
+
+
+
+
+
 ///////////////////////////////////////////////
 // EXERCISE 8
 ///////////////////////////////////////////////
@@ -1241,6 +1338,10 @@
 // let turtle = '🐢';
 // let rabbit = '🐇';
 
+// turtle = turtle.padStart(9);
+// rabbit = rabbit.padStart(9);
+
+
 // // it should look like this:
 // '     ||<- Start line'
 // '       🐢'
@@ -1251,25 +1352,39 @@
 // console.log(turtle);
 // console.log(rabbit);
 
-
 // // #2) What happens when you run turtle.trim().padEnd(9, '=') on the turtle variable
 // // Read about what the second parameter does in padEnd and padStart
 // turtle = turtle.trim().padEnd(9, '=');
+// console.log(turtle);
+
+// it adds = to the end 7 times(why 7!?)
+// it pads the string out to 9 charaters long
+    // the emoji takes up 2 characters
+    // and the = takes up the remaining 7 spots
+// questionnnnn... do we need to use trim?? i tested without trim and got the same result
+
+
+
+
 
 
 // // #3) Get the below object to go from:
-// let obj = {
+// let obj1 = {
 //   my: 'name',
 //   is: 'Rudolf',
-//   the: 'raindeer'
+//   the: 'reindeer'
 // }
 // // to this:
-// 'my name is Rudolf the raindeer'
+// 'my name is Rudolf the reindeer'
+
+// Object.entries(obj1).map(value => {
+
+// });
+
+// Object.entries(obj1).map(value => value.join(' ')).join(' ');
 
 
 
-///////////////////////////////////////////////
-// EXERCISE ADVANCED LOOPING
-///////////////////////////////////////////////
+
 
 
