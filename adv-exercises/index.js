@@ -1321,7 +1321,7 @@
 
 // AND THE NEW ES8 FEATURE EVERYONE IS MOST EXCITED ABOUT..
 // Async Await
-//  see notes after the exercises
+//  see How JavaScript works section
 
 
 
@@ -1386,5 +1386,320 @@
 
 
 
+///////////////////////////////////////////////
+// Loops (review lecture 118)
 
 
+
+////////////////
+// For
+
+// let todos = [
+//   'clean room',
+//   'brush teeth',
+//   'exercise',
+//   'study JavaScript',
+//   'eat healthy'
+// ];
+
+// for (let i = 0; i < todos.length; i++) {
+  // console.log(todos[i] + '!');
+    // adds ! when logging
+  // todos[i] = todos[i] + '!';
+    // adds ! to items in array
+  // todos[i].pop();
+    // won't work because todays[i] is an item in an array
+  // todos.pop();
+    // works because todos is the array
+    // it returns..
+    // ['clean room', 'brush teeth']
+    // why..?
+    // because as it pops adjusts the length
+        // i = 0, length = 5
+        // eat healthy pops off the end
+        // i = 1, length = 4
+        // study Javascript pops off the end
+        // i = 2, length = 3
+        // exercise pops off the end
+        // i = 3, length = 2
+        // i is now greater than length so function exits
+    // so how do we fix this??...
+// }
+
+// with..
+// saving the length in a variable
+// const todosLength = todos.length;
+// for (let i = 0; i < todosLength; i++) {
+//   todos.pop();
+// }
+
+
+///////////////
+// While
+
+// let counter1 = 0;
+// while (counter1 < 10) {
+//   console.log(counter1);
+//   counter1++;
+// }
+// returns
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+// stops when counter1 = 10 and exits function
+
+
+// and to count down backwards...
+// let counter1 = 10;
+// while (counter1 > 0) {
+//   console.log(counter1);
+//   counter1--;
+// }
+
+
+
+///////////////
+// Do while
+
+// let counter2 = 10;
+// do {
+//   console.log(counter2)
+//   counter2--;
+// } while (counter2 > 0);
+
+// while vs do while loop
+// in a while loop we check the condition first
+// whereas do while says, do the stuff first, then check the condition
+
+// but most of the time you use a for loop
+// well no, now we use forEach!!! :)
+
+
+
+///////////////
+// forEach
+
+// let todos = [
+//   'clean room',
+//   'brush teeth',
+//   'exercise',
+//   'study JavaScript',
+//   'eat healthy'
+// ];
+
+// todos.forEach(function(i) {
+//   console.log(i);
+// });
+// returns
+// clean room
+// brush teeth
+// exercise
+// study JavaScript
+// eat healthy
+
+
+// forEach takes the array and it asks for an argument
+// were not accessing the index like we do in the for loop
+// in for loop you must do todos[i]
+// forEach returns the item
+
+// to access the index in forEach
+// add additional parameter
+// todos.forEach(function(todo, i) {
+//   console.log(todo, i);
+// });
+
+// can also write it like...
+// so that its D R Y
+// and we can reuse the function elsewhere
+// function logTodos(todo, i) {
+//   console.log(todo, i);
+// }
+
+// todos.forEach(logTodos);
+
+// check that it works on all browsers!!
+// yessssss it works on allll, except opera mini parseInt
+
+
+
+
+///////////////////////////////////////////////
+// Advanced Loops L154
+
+// Iterating..
+// simply means we can go one by one through an array and look at each item
+// it can be done to iterables!..
+// both arrays & strings are 
+
+//  ther are 2 more ways to loop
+// const basket = ['apples', 'bananas', 'grapes'];
+
+// // 1.
+// for (let i = 0; i < basket.length; i++) {
+//   console.log(basket[i]);
+// }
+
+// // 2.
+// basket.forEach(item => {
+//   console.log(item);
+// })
+
+// 3.
+// for of 
+// Iterating - arrays string
+// for (item of basket) {
+//   console.log(item);
+// }
+// for of allows us to iterate over these iterables
+
+
+// for in
+// Enumerating - objects
+// const detailedBasket = {
+//   apples: 5,
+//   bananas: 10,
+//   grapes: 1000,
+// };
+
+// for (item in detailedBasket) {
+//   console.log(item);
+// };
+// for in allows are to loop over and see the object properties
+// we are not iterating here
+// with an object we are... enumerating (to mention a number of things one by one)
+
+
+// butttt... for in also works on arrays
+// because an array is basicially an object
+// it will return the array indexes
+// returns
+// 0
+// 1
+// 2
+// because..  
+// basket = {
+//   0: 'apples',
+//   1: 'bananas',
+//   2: 'grapes'
+// }
+
+
+// instead of forloops
+// we can use..
+// Object.keys()
+// Object.values()
+// Object.entries()
+
+
+
+///////////////////////////////////////////////
+// ADVANCED LOOPING EXCERCISE
+///////////////////////////////////////////////
+
+// const basket = ['apples', 'oranges', 'grapes'];
+// const detailedBasket = {
+//   apples: 5,
+//   oranges: 10,
+//   grapes: 1000
+// }
+
+// //1
+// for (let i = 0; i < basket.length; i++) {
+//   console.log(basket[i]);
+// }
+
+// //2
+// basket.forEach(item => {
+//   console.log(item);
+// })
+
+// for (item in detailedBasket) {
+//   console.log(item);
+// }
+
+// for (item of basket) {
+//   console.log(item);
+// }
+
+// Question #1:
+// create a function called biggestNumberInArray() that takes
+// an array as a parameter and returns the biggest number.
+// biggestNumberInArray([-1,0,3,100, 99, 2, 99]) should return 100;
+// Use at least 3 different types of javascript loops to write this:
+// const array = [-1,0,3,100, 99, 2, 99] // should return 100
+// const array2 = ['a', 3, 4, 2] // should return 4
+// const array3 = [] // should return 0
+
+  // it needs to iterate through
+  // and check if the number is greater than the previous
+  // if the number is greater than the previous it should save it in a new variable
+  // after all numbers are checked
+  // return the variable
+
+// const biggestNumberInArray = arr => {
+//   let bigOne = 0;
+//   arr.forEach(item=> {
+//     if (item > bigOne) {
+//       bigOne = item;
+//     }
+//   });
+//   console.log(bigOne);
+// }
+
+// biggestNumberInArray(array);
+
+// const biggestNumberInArray2 = (arr, item) => {
+//   let bigOne = 0;
+//   for (item of arr) {
+//     if (item > bigOne) {
+//       bigOne = item;
+//     }
+//   } 
+//     console.log(bigOne);
+// }
+
+// biggestNumberInArray2(array2)
+
+// function biggestNumberInArray3(arr) {
+
+// }
+
+// const biggestNumberInArray3 = (arr, item) => {
+//   let bigOne = 0;
+//   for (item in arr) {
+//     if (item > bigOne) {
+//       bigOne = item;
+//     }
+//   } 
+//     console.log(bigOne);
+// }
+
+// biggestNumberInArray3(array3)
+
+
+// Question #2:
+// Write a function checkBasket() that lets you know if the item is in the basket or not
+// amazonBasket = {
+//   glasses: 1,
+//   books: 2,
+//   floss: 100,
+// }
+
+// const checkBasket = (basket, lookingFor) => {
+//   for(item in basket) {
+//     if (item === lookingFor) {
+//       console.log(`${lookingFor} is in the basket.`);
+//       return;
+//     }
+//   }
+//   console.log(`${lookingFor} does not exist in your basket.`);
+// }
+
+// checkBasket(amazonBasket, `glasses`);
