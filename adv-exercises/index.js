@@ -1703,3 +1703,258 @@
 // }
 
 // checkBasket(amazonBasket, `glasses`);
+
+
+
+///////////////////////////////////////////////
+// DEBUGGING
+///////////////////////////////////////////////
+
+// the act of looking over code, understanding what it's doing
+// and figuring out, why it's not acting as expected
+// maybe its not even running!!
+// getting errors
+// maybe it's what the user is entering..
+
+// original
+// const flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+//   (a, b) => a.concat(b), []);
+
+// debuggingggg
+// const flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+//   (accumulator, array) => {
+//     console.log('array', array);
+//     console.log('accumulator', accumulator);
+//     return accumulator.concat(array)
+  
+//   }, []);
+
+// its an array, a nested array
+// reduce we know first parameter is the accumulator
+// second para is the value, so in this case the array
+// we know that the accumlator will start with an empty array []
+// now open up the function, add console logs
+// don't forget to add return
+// it's going to loop 3 times
+// it returns...
+    // array (2) [0, 1]
+    // accumulator []
+    // array (2) [2, 3]
+    // accumulator (2) [0, 1]
+    // array (2) [4, 5]
+    // accumulator (4) [0, 1, 2, 3]
+//  it looks like its adding the each nested array into the accumulator array
+// we using the concat function to join the arrays
+// we are flattening the arrays
+
+// instead of using console.log....
+// use debugger
+// it's JS keyword
+// it stops
+// you can go step by step through the function
+// it also shows..
+// Variables in scope
+// Context (this value)
+
+// const flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+//   (accumulator, array) => {
+//     debugger;
+//     return accumulator.concat(array)
+  
+//   }, []);
+
+
+
+
+///////////////////////////////////////////////
+// How JavaScript works
+///////////////////////////////////////////////
+
+
+// What is a program
+
+// allocate memory
+// parse and execute
+
+// Chrome
+// V8 - JS engine
+
+///////////
+// Memory Heap
+
+// const a = 1;
+// const b = 10;
+// const c = 100;
+
+// Memory Leak, happens when you have unused memory, it fills up the memory heap
+
+// Global variables are bad!!!
+
+
+//////////
+// Call Stack
+
+// first in, last out
+
+// console.log('1');
+// console.log('2');
+// console.log('3');
+
+//  what reads and executes our script
+
+// const one = () => {
+//   const two = () => {
+//     console.log('4');
+//   }
+//   two();
+// }
+
+
+
+// Javascript is a single threaded language that can be non blocking...?
+
+// single threaded means it has only one call stack
+// it can only do one thing at a time
+
+// why was it designed to be single threaded?
+// makes it less complicated
+// just one thing to worry about
+// with a multi threaded environment, you can have deadlocks
+
+// JavaScript is syncronous 
+// the latter cant start until the first finishes
+// syncronous can get slow
+
+
+// Recursion, means a function that calls itself
+// and creates a stack overflow
+
+
+
+// Javascript is a single threaded language that can be non-blocking..?
+
+// ideally we don't wait around for things that take time
+
+// asynchronous programming
+// console.log('1');
+// setTimeout(() => {
+//   console.log('2');
+// }, 2000)
+// console.log('3');
+
+
+//  JavaScript Run-Time Environment
+
+// Web API's
+    // DOM (document)
+    // AJAX (XMLHttpRequest)
+    // Timeout (serTimeout)
+// Callback Queue
+    // callback()
+    // onClick
+    // onLoad
+    // onDone
+// Event loop
+
+
+// What is the difference between synchronous & asynchronous programming?
+// How does JavaScript work....?
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+// Javascript is a single threaded language that can be non-blocking, 
+// it has one call stack and it does one thing at a time.
+// in order to not block the single thread, its can be asynchronous with callback functions
+// and the callback functions run in the background, through the callback queue and then the event loop
+// which bring it back to the Call Stack!!
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////////////
+// Modules
+///////////////////////////////////////////////
+
+// don't polute the global name space!!!!
+
+// lack of dependency resolution
+// when you have multiple js files 
+// the current file, references a variable/function in a file that hasn't loaded yet
+
+
+// IIFE
+// it wraps brackets around the function
+// js reads it, evaluates it and executes it
+// and it was a confusing way to make sure of one thing... 
+// by using this method, you didnt polute the global main space!
+// the issue with this is, the order of the files are still important
+// lack of dependency resolution
+
+
+// Browserify
+// is a module bundler
+// it bundles all the JS files into 1
+// not great for the devs when working on it, they keep seperate files
+// so we run it through browserify right before we deploy (put it out to the public)
+
+// all these problems were because it didnt have..
+// a module system built into the system
+
+// Modules
+// each piece is really good at doing one thing!
+
+
+// ES6 & Webpack2
+// where we are today!!
+
+// js1
+// export const add = (a, b) => a + b;
+// //  or, if only 1 file
+// export default function add() {
+//   return a + b;
+// }
+
+// // js2
+// import { add } from './add';
+// //  or, if only 1 file
+// import add from './add';
+
+// put the import at the top
+
+// but browsers are all support this yet, coz its news
+// so we use Webpack2
+
+// Webpack2, like browerify is a module bundler
+// it bundles modules (it bundles javascript files)
+// it traverses the depency tree
+// with Webpack2 we can use ES6 in all browsers
+
+//  we will use this with React
+
+// webpack
+// module.exports = {
+//   entry: './app/main.js',
+//   output: {
+//     path: './dist',
+//     filename: 'bundle.js'
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
