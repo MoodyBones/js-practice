@@ -36,7 +36,7 @@ function addListAfterKeypress(event) {
 }
 
 function doneItem(e) {
-	if (e.target.tagName === "LI") {
+	if (e.target.tagName === "SPAN") {
 		e.target.classList.toggle("done");
 	}
 }
