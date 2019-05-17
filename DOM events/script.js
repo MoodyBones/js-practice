@@ -1,14 +1,12 @@
 const enterButt = document.getElementById("enter");
-const input = document.getElementById("userinput");
+const input = document.getElementById("userInput");
 const ul = document.querySelector("ul");
 const listButton = document.querySelectorAll('.delete--button');
 
 
-const inputLength = () => {
-	return input.value.length;
-}
+const inputLength = () => input.value.length;
 
-const createListElement = el => {
+const createListElement = () => {
 	let li, inputText, btn;
 	li = document.createElement("li");
 	inputText = document.createTextNode(input.value);
@@ -25,25 +23,25 @@ const createListElement = el => {
 
 const addListAfterClick = () => {
 	if (inputLength() > 0) {
-		createListElement();
+		return createListElement();
 	}
 }
 
 const addListAfterKeypress = event => {
 	if (inputLength() > 0 && event.keyCode === 13) {
-		createListElement();
+		return createListElement();
 	}
 }
 
 const doneItem = e => {
 	if (e.target.tagName === "SPAN") {
-		e.target.classList.toggle("done");
+		return e.target.classList.toggle("done");
 	}
 }
 
 const deleteListItem = event => {
 	const listElement = event.target.parentNode;
-	event.target.parentNode.parentNode.removeChild(listElement);
+	return event.target.parentNode.parentNode.removeChild(listElement);
 }
 
 
