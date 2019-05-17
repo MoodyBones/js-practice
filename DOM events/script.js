@@ -1,15 +1,13 @@
-var enterButt = document.getElementById("enter");
-var input = document.getElementById("userinput");
-var ul = document.querySelector("ul");
-var listButton = document.querySelectorAll('.delete--button');
+const enterButt = document.getElementById("enter");
+const input = document.getElementById("userInput");
+const ul = document.querySelector("ul");
+const listButton = document.querySelectorAll('.delete--button');
 
 
-function inputLength() {
-	return input.value.length;
-}
+const inputLength = () => input.value.length;
 
-function createListElement(el) {
-	var li, inputText, btn;
+const createListElement = () => {
+	let li, inputText, btn;
 	li = document.createElement("li");
 	inputText = document.createTextNode(input.value);
 	btn = document.createElement("button");
@@ -23,27 +21,27 @@ function createListElement(el) {
 	btn.onclick = deleteListItem;
 }
 
-function addListAfterClick() {
+const addListAfterClick = () => {
 	if (inputLength() > 0) {
-		createListElement();
+		return createListElement();
 	}
 }
 
-function addListAfterKeypress(event) {
+const addListAfterKeypress = event => {
 	if (inputLength() > 0 && event.keyCode === 13) {
-		createListElement();
+		return createListElement();
 	}
 }
 
-function doneItem(e) {
-	if (e.target.tagName === "LI") {
-		e.target.classList.toggle("done");
+const doneItem = e => {
+	if (e.target.tagName === "SPAN") {
+		return e.target.classList.toggle("done");
 	}
 }
 
-function deleteListItem(event) {
-	var listElement = event.target.parentNode;
-	event.target.parentNode.parentNode.removeChild(listElement);
+const deleteListItem = event => {
+	const listElement = event.target.parentNode;
+	return event.target.parentNode.parentNode.removeChild(listElement);
 }
 
 
